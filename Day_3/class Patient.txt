@@ -1,0 +1,18 @@
+import java.util.*;
+
+class Patient {
+    int id;
+    String name;
+    Patient(int id, String name) { this.id = id; this.name = name; }
+}
+
+class PatientManager {
+    HashMap<Integer, Patient> map = new HashMap<>();
+
+    void addPatient(Patient p) { map.put(p.id, p); }
+    Patient getPatient(int id) { return map.get(id); }
+    void updatePatient(int id, String newName) { 
+        if(map.containsKey(id)) map.get(id).name = newName;
+    }
+    void deletePatient(int id) { map.remove(id); }
+}

@@ -1,0 +1,18 @@
+CLASS TextEditor
+    ATTRIBUTE: undoStack
+    CONSTRUCTOR():
+        INITIALIZE undoStack as empty stack
+    METHOD type(text):
+        PUSH text onto undoStack
+    METHOD undo():
+        POP top element from undoStack
+        RETURN top of stack (previous text)
+
+MAIN
+    CREATE editor = NEW TextEditor()
+    CALL editor.type("Hello")
+    CALL editor.type("Hello World")
+    CALL editor.type("Hello World!!!")
+    PRINT "Current = " + top of stack
+    CALL editor.undo()
+    PRINT "After Undo = " + top of stack

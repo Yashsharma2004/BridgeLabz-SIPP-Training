@@ -1,0 +1,20 @@
+CLASS QuizTimer
+    ATTRIBUTE: timeSlots[]
+    ATTRIBUTE: index = 0
+    CONSTRUCTOR(timeSlots):
+        SET this.timeSlots = timeSlots
+    METHOD nextSlot():
+        INCREMENT index
+        IF index == length of timeSlots:
+            RESET index = 0
+        RETURN timeSlots[index]
+    METHOD checkWarning():
+        IF timeSlots[index] < 5 seconds:
+            PRINT "Warning: Time almost over!"
+
+MAIN
+    CREATE timer = NEW QuizTimer([30, 45, 60])
+    FOR each question:
+        slot = timer.nextSlot()
+        PRINT "Time allotted = " + slot
+        CALL timer.checkWarning()

@@ -1,0 +1,18 @@
+CLASS Item
+    ATTRIBUTES: name, price
+    CONSTRUCTOR(name, price):
+        SET this.name = name
+        SET this.price = price
+
+GENERIC METHOD calculateTotal(List<Item> items):
+    total = 0
+    FOR each item in items:
+        total += item.price
+    RETURN total
+
+MAIN
+    CREATE cart = NEW List<Item>()
+    ADD NEW Item("Laptop", 50000)
+    ADD NEW Item("Mouse", 500)
+    total = calculateTotal(cart)
+    PRINT "Total Cart Price = " + total

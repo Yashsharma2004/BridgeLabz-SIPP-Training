@@ -1,0 +1,18 @@
+ENUM TrafficLight { RED, GREEN, YELLOW }
+
+CLASS SignalController
+    ATTRIBUTE: currentLight
+    CONSTRUCTOR():
+        SET currentLight = RED
+    METHOD switchLight():
+        IF currentLight == RED → SET currentLight = GREEN
+        ELSE IF currentLight == GREEN → SET currentLight = YELLOW
+        ELSE IF currentLight == YELLOW → SET currentLight = RED
+    METHOD displayLight():
+        PRINT currentLight
+
+MAIN
+    CREATE controller = NEW SignalController()
+    REPEAT every few seconds:
+        CALL controller.displayLight()
+        CALL controller.switchLight()

@@ -1,0 +1,22 @@
+CLASS Job
+    ATTRIBUTES: id, deadline, processingTime
+    CONSTRUCTOR(id, deadline, processingTime):
+        SET this.id = id
+        SET this.deadline = deadline
+        SET this.processingTime = processingTime
+
+CLASS JobScheduler
+    ATTRIBUTE: priorityQueue (sorted by deadline, then processingTime)
+    METHOD addJob(job):
+        INSERT job into priorityQueue
+    METHOD processJobs():
+        WHILE priorityQueue not empty:
+            REMOVE job with earliest deadline (or shorter processing time if tie)
+            PRINT "Processing job " + job.id
+
+MAIN
+    CREATE scheduler = NEW JobScheduler()
+    ADD Job(1, deadline=3, processingTime=5)
+    ADD Job(2, deadline=1, processingTime=2)
+    ADD Job(3, deadline=2, processingTime=1)
+    CALL scheduler.processJobs()

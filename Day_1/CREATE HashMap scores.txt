@@ -1,0 +1,8 @@
+MAIN
+    CREATE HashMap scores
+    PUT ("Dhruv", 85)
+    PUT ("Aman", 92)
+    PUT ("Priya", 78)
+
+    FIND entry with MAXIMUM value
+    PRINT name and score

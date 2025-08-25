@@ -1,0 +1,17 @@
+class Transaction<T> {
+    T paymentMethod;
+    double amount;
+
+    Transaction(T paymentMethod, double amount) {
+        this.paymentMethod = paymentMethod;
+        this.amount = amount;
+    }
+
+    void process() {
+        System.out.println("Processing " + paymentMethod + " transaction of " + amount);
+    }
+}
+
+class UPI { public String toString() { return "UPI"; } }
+class Card { public String toString() { return "Card"; } }
+class NetBanking { public String toString() { return "NetBanking"; } }

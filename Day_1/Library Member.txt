@@ -1,0 +1,16 @@
+CLASS Member
+    ATTRIBUTES: name, id, membershipDate
+    CONSTRUCTOR(name, id, membershipDate):
+        SET this.name = name
+        SET this.id = id
+        SET this.membershipDate = membershipDate
+    METHOD isMembershipValid():
+        IF (currentDate - membershipDate) < 1 year:
+            RETURN true
+        ELSE
+            RETURN false
+    METHOD displayInfo()
+
+MAIN
+    CREATE Member m1 = NEW Member("Dhruv", 101, "2024-08-20")
+    CALL m1.displayInfo()

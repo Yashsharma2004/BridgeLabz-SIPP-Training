@@ -1,0 +1,13 @@
+interface Searchable {
+    boolean matches(String query);
+}
+interface Printable {
+    void print();
+}
+
+class LabReport implements Printable, Searchable {
+    String testName;
+    LabReport(String testName) { this.testName = testName; }
+    public boolean matches(String query) { return testName.contains(query); }
+    public void print() { System.out.println("Lab Report: " + testName); }
+}

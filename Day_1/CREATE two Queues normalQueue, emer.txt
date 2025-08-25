@@ -1,0 +1,19 @@
+CLASS Customer
+    ATTRIBUTES: name, type
+    CONSTRUCTOR(name, type):
+        SET this.name = name
+        SET this.type = type
+
+MAIN
+    CREATE normalQueue, emergencyQueue
+
+    ENQUEUE NEW Customer("Alice", "normal") into normalQueue
+    ENQUEUE NEW Customer("Bob", "emergency") into emergencyQueue
+    ENQUEUE NEW Customer("Charlie", "normal") into normalQueue
+
+    WHILE queues not empty:
+        IF emergencyQueue not empty:
+            DEQUEUE c from emergencyQueue
+        ELSE
+            DEQUEUE c from normalQueue
+        PRINT "Serving " + c.name + " (" + c.type + ")"

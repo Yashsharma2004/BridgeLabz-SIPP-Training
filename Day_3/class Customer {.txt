@@ -1,0 +1,33 @@
+class Customer {
+    String name, address;
+    Customer(String name, String address) { this.name = name; this.address = address; }
+}
+
+class Restaurant {
+    String name;
+    Restaurant(String name) { this.name = name; }
+}
+
+class DeliveryBoy {
+    String name;
+    DeliveryBoy(String name) { this.name = name; }
+}
+
+class Order {
+    Customer customer;
+    Restaurant restaurant;
+    DeliveryBoy deliveryBoy;
+    double amount;
+
+    Order(Customer c, Restaurant r, DeliveryBoy d, double amount) {
+        this.customer = c;
+        this.restaurant = r;
+        this.deliveryBoy = d;
+        this.amount = amount;
+    }
+
+    void showOrderDetails() {
+        System.out.println("Order by " + customer.name + " from " + restaurant.name + 
+                           ", delivered by " + deliveryBoy.name + " | Amount: " + amount);
+    }
+}

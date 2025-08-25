@@ -1,0 +1,14 @@
+CLASS Doctor
+    ATTRIBUTES: name, specialization
+    CONSTRUCTOR(name, specialization):
+        SET this.name = name
+        SET this.specialization = specialization
+
+MAIN
+    CREATE Map<String, List<Doctor>> hospitalDepartments
+
+    ADD "Cardiology" → [Doctor("Dr. A", "Cardiologist"), Doctor("Dr. B", "Cardiologist")]
+    ADD "Neurology" → [Doctor("Dr. C", "Neurologist"), Doctor("Dr. D", "NeuroSurgeon")]
+
+    FILTER doctors WHERE specialization == "Cardiologist"
+    PRINT all cardiologists from hospitalDepartments
