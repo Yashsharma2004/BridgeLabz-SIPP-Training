@@ -1,5 +1,5 @@
 
-
+package Exception;
 public abstract class LoginBase {
     protected String email;
     protected String password;

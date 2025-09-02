@@ -1,5 +1,4 @@
-package ExceptionHandling;
-
+package Exception;
 import java.util.Scanner;
 
 public class MultipleCatchBlocks {

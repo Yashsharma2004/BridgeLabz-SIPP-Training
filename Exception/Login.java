@@ -1,3 +1,4 @@
+package Exception;
 public class Login extends LoginBase {
     public Login(String email, String password) {
         super(email, password);
